@@ -6,12 +6,12 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-    #   AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
-    #   AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       ENDPOINT_URL: ${ENDPOINT_URL}
     volumes:
     - $HOME/.aws/credentials:/home/app/.aws/credentials:ro
   
-secrets:
-  credentials:
-    external: true
+# secrets:
+#   credentials:
+#     external: true
