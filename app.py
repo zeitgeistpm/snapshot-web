@@ -4,13 +4,25 @@ import boto3
 from botocore.exceptions import ClientError
 from filter import datetimeformat, file_type
 from get_bucket_resource import get_bucket, list_buckets
+from dotenv import load_dotenv
+import os
 
-Client = boto3.client("s3")
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+ENDPOINT_URL = os.environ.get("ENDPOINT_URL")
+
+linode_obj_config = {
+    "aws_access_key_id": AWS_ACCESS_KEY_ID,
+    "aws_secret_access_key": AWS_SECRET_ACCESS_KEY,
+    "endpoint_url": ENDPOINT_URL
+}
+
+Client = boto3.client('s3', **linode_obj_config)
 response = Client.list_buckets()
 
 app = Flask(__name__)
 Bootstrap(app)
-app.secret_key = 'secret'
+# app.secret_key = 'secret'
 app.jinja_env.filters['datetimeformat'] = datetimeformat
 app.jinja_env.filters['file_type'] = file_type
 
