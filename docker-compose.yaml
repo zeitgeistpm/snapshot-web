@@ -1,7 +1,7 @@
-version: '3'
+version: '3.8'
 
 services:
-  myapp:
+  ztg-snapshot:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,8 +9,6 @@ services:
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       ENDPOINT_URL: ${ENDPOINT_URL}
-      
-      
     secrets:
       - credentials
 
