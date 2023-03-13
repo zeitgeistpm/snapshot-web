@@ -14,7 +14,7 @@ ENDPOINT_URL = os.environ.get("ENDPOINT_URL")
 linode_obj_config = {
     "aws_access_key_id": AWS_ACCESS_KEY_ID,
     "aws_secret_access_key": AWS_SECRET_ACCESS_KEY,
-    "endpoint_url": ENDPOINT_URL
+    "endpoint_url": ENDPOINT_URL,
 }
 
 Client = boto3.client('s3', **linode_obj_config)
