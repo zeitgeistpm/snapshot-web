@@ -5,10 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # environment:
+    environment:
     #   AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
     #   AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
-    #   ENDPOINT_URL: ${ENDPOINT_URL}
+      ENDPOINT_URL: ${ENDPOINT_URL}
     volumes:
     - $HOME/.aws/credentials:/home/app/.aws/credentials:ro
   
