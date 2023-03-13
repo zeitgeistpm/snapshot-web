@@ -4,7 +4,7 @@ import boto3
 from botocore.exceptions import ClientError
 from filter import datetimeformat, file_type
 from get_bucket_resource import get_bucket, list_buckets
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
