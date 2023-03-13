@@ -11,8 +11,9 @@ services:
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
       ENDPOINT_URL: ${ENDPOINT_URL}
+
     ports:
-      - "127.0.0.1:5000:5000"
+      - "5000:5000"
     
     # volumes:
     # - $HOME/.aws/credentials:/home/app/.aws/credentials:ro
